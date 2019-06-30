@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  tomcat:
+    accesslog:
+      enabled: false   # is access logging enabled
+      # directory: #
+      pattern: info    #log pattern of the access log
+    protocol-header: x-forwarded-proto
+    remote-ip-header: x-forwarded-for
+    port-header:     # front end proxy port header
+    basedir:  /tmp
+    background-processor-delay: 30 # in seconds
+    max-threads: 200
+    uri-encoding:  UTF-8 # character encoding to use for URL decoding
+  servlet:
+    session:
+      timeout: 1800
+    context-path: /
+debug: false
+
+spring:
+  mvc:
+    servlet:
+      path: /

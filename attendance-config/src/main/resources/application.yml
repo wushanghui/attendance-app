@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+#配置config server
+spring:
+  application:
+    name: attendance-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/configDev
+        bootstrap: true
+        encrypt:
+          enabled: false
